@@ -1,0 +1,15 @@
+<launch>
+    <!-- uas_1 -->
+    <group>
+        <arg name="tag_name" default="x500_0" />
+        <arg name="uas_name" default="uas_1" />
+        <arg name="id" default="0" />
+        <include file="$(find-pkg-share px4_uwb_locate)/launch/px4_uwb_locate.launch">
+            <arg name="namespace"
+                value="$(eval ' \'px4_uwb_locate_node_\' + \'$(var id)\' ')" />
+            <arg name="tag_name" value="$(var tag_name)" />
+            <arg name="uas_name" value="$(var uas_name)" />
+        </include>
+    </group>
+</launch>
+    
